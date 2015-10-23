@@ -1,0 +1,35 @@
+<!-- Notes:
+  * I've used classes mainly for styling purposes and id's for unique tags that my js will interact with. For example, the "New Note Form" contains both a class (which is used in my css to style the form) and an id (which is used in my js to handle the submit event on the form). Reasoning for this: If ever I want to give this form a different style (defined by say another-new-note-form), I can go ahead and change just the class and leave my js unchanged since the id is still the same. Tl;dr: Classes are for styling, Id's are for js interaction (for the most part).
+-->
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="notes.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+
+    <script src="notes.js"></script>
+  </head>
+
+  <body>
+    <h1>Notes</h1>
+    <div class="filters">
+      <input type="text" placeholder="Search Term (Optional)" id="notesSearchFilter" />
+      <select id="notesOrder">
+        <option value="created">Created</option>
+        <option value="updated" default>Updated</option>
+      </select>
+      <select id="notesOrderDirection">
+        <option value="asc" default>Ascending</option>
+        <option value="dec">Decending</option>
+      </select>
+    </div>
+    <div class="new-note">
+      <form class="new-note-form" id="newNoteForm">
+        <textarea id="newNoteText" class="note-content" placeholder="Add a Note" rows="5" cols="20" required></textarea>
+        <input type="submit" value="Add Note" />
+      </form>
+    </div>
+    <div class="notes" id="notesContainer"></div>
+  </body>
+</html>

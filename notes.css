@@ -1,0 +1,46 @@
+body {
+  font-family: sans-serif
+}
+
+.note:nth-child(odd) {
+  background-color: #f0f0fa;
+}
+
+.note {
+  padding: 15px 10px;
+  position: relative;
+}
+
+.note-preview {
+  display: inline-block;
+  width: calc(100% - 500px);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.dates {
+  font-size: 12px;
+  font-style: italic;
+  width: 500px;
+  float: right;
+}
+
+.dates > span {
+  margin-right: 20px;
+  float: right;
+}
+
+.updated-date:before {
+    content: "Last Updated - ";
+}
+
+.created-date:before {
+    content: "Created - ";
+}
+
+.note-content {
+  width: 100%;
+  height: 50px;
+  height: 19px;
+}
