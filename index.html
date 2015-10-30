@@ -3,32 +3,36 @@
 -->
 <html>
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="notes.css">
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
     <script src="notes.js"></script>
   </head>
 
   <body>
     <h1>Notes</h1>
+    <div class="new-note">
+      <form class="new-note-form" id="newNoteForm">
+        <textarea id="newNoteText" class="note-content" placeholder="Add a Note" rows="2" cols="20" required></textarea>
+        <input type="submit" value="Add" />
+      </form>
+    </div>
     <div class="filters">
       <input type="text" placeholder="Search Term (Optional)" id="notesSearchFilter" />
       <select id="notesOrder">
         <option value="created">Created</option>
         <option value="updated" default>Updated</option>
       </select>
-      <select id="notesOrderDirection">
-        <option value="asc" default>Ascending</option>
-        <option value="dec">Decending</option>
-      </select>
-    </div>
-    <div class="new-note">
-      <form class="new-note-form" id="newNoteForm">
-        <textarea id="newNoteText" class="note-content" placeholder="Add a Note" rows="5" cols="20" required></textarea>
-        <input type="submit" value="Add Note" />
-      </form>
+      <!-- Uncomment if you want to see more filter options <select id="notesOrderDirection">
+        <option value="asc" default>Newest to Oldest</option>
+        <option value="dec">Oldest to Newest</option>
+      </select>-->
     </div>
     <div class="notes" id="notesContainer"></div>
   </body>
